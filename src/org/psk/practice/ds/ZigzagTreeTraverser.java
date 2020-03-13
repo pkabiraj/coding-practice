@@ -28,10 +28,7 @@ public class ZigzagTreeTraverser {
         l1r.setLeft(l2l2);
         l1r.setRight(l2r2);
 
-        // int maxDepth = maxDepth(root);
-        // System.out.println(maxDepth);
-
-        Stack<Node> parent = new Stack<Node>();
+        Stack<Node> parent = new Stack<>();
         parent.add(root);
         traverseZigzag(parent, false);
     }
@@ -48,7 +45,7 @@ public class ZigzagTreeTraverser {
         if (parent == null || parent.isEmpty()) {
             return;
         }
-        Stack<Node> child = new Stack<Node>();
+        Stack<Node> child = new Stack<>();
 
         while (!parent.isEmpty()) {
             Node node = parent.pop();
