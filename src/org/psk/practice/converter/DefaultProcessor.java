@@ -25,9 +25,11 @@ public class DefaultProcessor implements Processor {
      * The Class UnitProcessor to process two digit numbers upto 19.
      */
     private class UnitProcessor implements Processor {
+
         private final String[] TOKENS = new String[]{"", "One", "Two", "Three", "Four", "Five",
-                "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen",
-                "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+                                                     "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+                                                     "Thirteen", "Fourteen",
+                                                     "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
         @Override
         public String getName(String value) {
@@ -42,8 +44,9 @@ public class DefaultProcessor implements Processor {
      * The Class TensProcessor to process 2 digit numbers less greater than 19.
      */
     private class TensProcessor implements Processor {
+
         private final String[] TOKENS = new String[]{"Twenty", "Thirty", "Fourty", "Fifty",
-                "Sixty", "Seventy", "Eighty", "Ninety"};
+                                                     "Sixty", "Seventy", "Eighty", "Ninety"};
         private final Processor unitProcessor = new UnitProcessor();
 
         @Override
@@ -75,6 +78,7 @@ public class DefaultProcessor implements Processor {
      * The Class HundredProcessor to process 3 digit numbers.
      */
     private class HundredProcessor implements Processor {
+
         private final int EXPONENT = 2;
         private final Processor unitProcessor = new UnitProcessor();
         private final Processor tensProcessor = new TensProcessor();
@@ -111,8 +115,9 @@ public class DefaultProcessor implements Processor {
      * The Class BigNumberProcessor to process more than 3 digit numbers.
      */
     private class BigNumberProcessor implements Processor {
+
         private final Processor hundredProcessor = new HundredProcessor();
-        private Processor lowProcessor;
+        private final Processor lowProcessor;
         private final int exponent;
 
         /**

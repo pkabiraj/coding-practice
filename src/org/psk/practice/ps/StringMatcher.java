@@ -19,8 +19,8 @@ public class StringMatcher {
         if (pattern.length() > 1 && pattern.charAt(1) == '*') {
             if (pattern.charAt(0) == text.charAt(0)) {
                 return matchCore(text.substring(1), pattern.substring(2)) // move on to the next state
-                        || matchCore(text.substring(1), pattern) // stay on the current state
-                        || matchCore(text, pattern.substring(2)); // ignore a '*'
+                       || matchCore(text.substring(1), pattern) // stay on the current state
+                       || matchCore(text, pattern.substring(2)); // ignore a '*'
             } else {
                 return matchCore(text, pattern.substring(2));
             }

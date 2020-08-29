@@ -3,16 +3,9 @@ package org.psk.practice.ps;
 /**
  * Find an algorithm to find all valid permutation of parenthesis for given n.
  * <p>
- * For n =2, the O/P should be
- * {}{}
- * {{}}
+ * For n =2, the O/P should be {}{} {{}}
  * <p>
- * for n=3, O/P should be
- * {}{}{}
- * {{{}}}
- * {{}}{}
- * {}{{}}
- * {{}{}}
+ * for n=3, O/P should be {}{}{} {{{}}} {{}}{} {}{{}} {{}{}}
  */
 
 public class Parenthesis {

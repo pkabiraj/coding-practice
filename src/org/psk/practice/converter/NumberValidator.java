@@ -63,6 +63,7 @@ public class NumberValidator implements Validator {
      * The Class NumberChecker to check if the input is a valid number or not.
      */
     private static class NumberChecker implements Checker {
+
         private String errorMessage = null;
 
         @Override
@@ -90,13 +91,14 @@ public class NumberValidator implements Validator {
      * The Class NegativeNumberChecker to check if the number is a negative number or not.
      */
     private static class NegativeNumberChecker implements Checker {
+
         private String errorMessage = null;
 
         @Override
         public boolean check(String input) {
             if (input.charAt(0) == '-') {
                 errorMessage = "The number " + input
-                        + " is a negative number. We support only positive number.";
+                               + " is a negative number. We support only positive number.";
                 return false;
             }
             return true;
@@ -112,13 +114,14 @@ public class NumberValidator implements Validator {
      * The Class DecimalNumberChecker to check if the number is a decimal number or not.
      */
     private static class DecimalNumberChecker implements Checker {
+
         private String errorMessage = null;
 
         @Override
         public boolean check(String input) {
             if (input.contains(".")) {
                 errorMessage = "The number " + input
-                        + " is a decimal number. We support only non-decimal numbers.";
+                               + " is a decimal number. We support only non-decimal numbers.";
                 return false;
             }
             return true;
@@ -134,13 +137,14 @@ public class NumberValidator implements Validator {
      * The Class LimitChecker to check if the input exceeds the supporting number limit or not.
      */
     private static class LimitChecker implements Checker {
+
         private String errorMessage = null;
 
         @Override
         public boolean check(String input) {
             if (input.length() > ConverterUtil.LIMIT) {
                 errorMessage = "Then number " + input + " exceeds the limit we currently support. We support upto "
-                        + ConverterUtil.LIMIT + " digit numbers.";
+                               + ConverterUtil.LIMIT + " digit numbers.";
                 return false;
             }
             return true;

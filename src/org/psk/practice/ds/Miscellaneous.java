@@ -11,10 +11,10 @@ public class Miscellaneous {
     public static void main(String[] args) throws InterruptedException {
         // System.out.println(parseInt("123", 10));
 
-         int arr[] = { 1, 3, 5, 4, 4, 6, 7, -1, 9, 1 };
-         findSumHashMap(arr, 9);
-         System.out.println(".....................");
-         findSum(arr, 9);
+        int[] arr = {1, 3, 5, 4, 4, 6, 7, -1, 9, 1};
+        findSumHashMap(arr, 9);
+        System.out.println(".....................");
+        findSum(arr, 9);
 
         // removeChars("Battle of the Vowels: Hawaii vs. Grozny", "aeiou");
 
@@ -45,7 +45,7 @@ public class Miscellaneous {
         // }
         // }
 
-//        longestSubStringWithoutrepeatation();
+        //        longestSubStringWithoutrepeatation();
 
         // String input = "Pinaki Sankar Kabiraj";
         // reverseSentence(input.toCharArray(), input.length());
@@ -54,7 +54,7 @@ public class Miscellaneous {
         // -22, 15, -4, 7 };
         // System.out.println(maxSubArrSum(STOCK, STOCK.length));
 
-//		printStrings("ABCD", "", 0, "ABCD".length());
+        //		printStrings("ABCD", "", 0, "ABCD".length());
     }
 
     private static void printStrings(String string, String temp, int i, int length) {
@@ -77,7 +77,7 @@ public class Miscellaneous {
         String longestSoFar = "";
         String longestSubStr = "";
         char current;
-        int lastSeen[] = new int[256];
+        int[] lastSeen = new int[256];
 
         for (int i = 0; i < 256; i++) {
             lastSeen[i] = -1;
@@ -103,6 +103,7 @@ public class Miscellaneous {
     }
 
     private static class Triplet implements Comparable<Integer> {
+
         private final int square;
         private final int value;
 
@@ -121,10 +122,7 @@ public class Miscellaneous {
                 return false;
             }
             Triplet triplet = (Triplet) obj;
-            if (value != triplet.value || square != triplet.square) {
-                return false;
-            }
-            return true;
+            return value == triplet.value && square == triplet.square;
         }
 
         @Override
@@ -302,7 +300,7 @@ public class Miscellaneous {
         }
     }
 
-    public static int maxSubArrSum(int numbers[], int length) {
+    public static int maxSubArrSum(int[] numbers, int length) {
         // Initialize variables here
         int max_so_far = numbers[0], max_ending_here = numbers[0];
 

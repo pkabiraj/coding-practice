@@ -2,8 +2,8 @@ package org.psk.practice.snakeladder;
 
 public class Square {
 
-    private Board board;
-    private int position;
+    private final Board board;
+    private final int position;
 
     public Square(Board board, int position) {
         this.board = board;

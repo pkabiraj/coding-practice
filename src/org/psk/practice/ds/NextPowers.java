@@ -5,7 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class NextPowers implements Iterator<Long> {
+
     private static class IntPair {
+
         public IntPair(int a,
                        int b) {
             this.a = a;

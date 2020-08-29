@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class Trie {
+
     private final TrieNode root;
 
     public Trie() {
@@ -110,7 +111,11 @@ public class Trie {
         }
     }
 
-    private void prefixMatch(char[] input, int currentIndex, TrieNode current, StringBuilder prefix, List<String> matches) {
+    private void prefixMatch(char[] input,
+                             int currentIndex,
+                             TrieNode current,
+                             StringBuilder prefix,
+                             List<String> matches) {
         if (currentIndex < input.length) { // Going through the prefix
             char c = input[currentIndex];
             TrieNode childNode = current.getChildNode(c);

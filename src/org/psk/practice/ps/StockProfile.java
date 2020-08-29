@@ -25,6 +25,6 @@ public class StockProfile {
         }
 
         System.out.println("buyTime=" + buy + " (" + stocks[buy] + "), profit=" + maxDiff + ", sellTime=" + sell
-								   + " (" + stocks[sell] + ")");
+                           + " (" + stocks[sell] + ")");
     }
 }

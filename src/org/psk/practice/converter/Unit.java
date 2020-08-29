@@ -7,11 +7,11 @@ package org.psk.practice.converter;
  */
 public enum Unit {
     Quadrillion(15),
-	Trillion(12),
-	Billion(9),
-	Million(6),
-	Thousand(3),
-	Hundred(2);
+    Trillion(12),
+    Billion(9),
+    Million(6),
+    Thousand(3),
+    Hundred(2);
 
     private final int exponent;
     private final String name;

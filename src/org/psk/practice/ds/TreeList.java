@@ -10,11 +10,8 @@ package org.psk.practice.ds;
  *
  * <p>
  * <code>
- * TreeList main methods:
- * -join() -- utility to connect two list nodes
- * -append() -- utility to append two lists
- * -treeToList() -- the core recursive function
- * -treeInsert() -- used to build the tree
+ * TreeList main methods: -join() -- utility to connect two list nodes -append() -- utility to append two lists
+ * -treeToList() -- the core recursive function -treeInsert() -- used to build the tree
  * </code>
  * </p>
  *
@@ -28,6 +25,7 @@ public class TreeList {
      * where it is treated as a list.
      */
     private static class Node {
+
         int data;
         Node small;
         Node large;
@@ -125,7 +123,7 @@ public class TreeList {
             return;
         }
         printTree(root.small);
-        System.out.print(Integer.toString(root.data) + " ");
+        System.out.print(root.data + " ");
         printTree(root.large);
     }
 
@@ -134,7 +132,7 @@ public class TreeList {
         Node current = head;
 
         while (current != null) {
-            System.out.print(Integer.toString(current.data) + " ");
+            System.out.print(current.data + " ");
             current = current.large;
             if (current == head) {
                 break;

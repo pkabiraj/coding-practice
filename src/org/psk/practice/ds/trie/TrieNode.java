@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TrieNode {
+
     private boolean isWord;
     private char content;
     private Map<Character, TrieNode> childNodes;

@@ -12,7 +12,7 @@ public class MultiDuplicateNo {
         }
     }
 
-    private static int duplicate(int numbers[]) {
+    private static int duplicate(int[] numbers) {
         int length = numbers.length;
         for (int i = 0; i < length; ++i) {
             if (numbers[i] < 0 || numbers[i] > length - 1) {

@@ -6,10 +6,11 @@ public class ArrayToAllPermutations {
 
     // For simplicity I am taking it as string array. Char Array will save space
     private static final String[] alphabet = {"", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "v", "z"};
+                                              "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "v", "z"};
 
     // A Binary Tree node
     private static class Node {
+
         String dataString;
         Node left;
         Node right;
@@ -24,33 +25,27 @@ public class ArrayToAllPermutations {
         }
     }
 
-	/**
-	 * <code>
-	 * Input: {1, 1}
-	 * Output: ("aa", 'k")
-	 * [2 interpretations: aa(1, 1), k(11)]
-	 *
-	 * Input: {1, 2, 1}
-	 * Output: ("aba", "au", "la")
-	 * [3 interpretations: aba(1,2,1), au(1,21), la(12,1)]
-	 *
-	 * Input: {9, 1, 8}
-	 * Output: {"iah", "ir"}
-	 * [2 interpretations: iah(9,1,8), ir(9,18)]
-	 * </code>
-	 * <pre>
-	 *                    �� {1,2,1}            Codes used in tree
-	 *                  /             \               "a" --> 1
-	 *                 /               \              "b" --> 2
-	 *             "a"{2,1}            "l"{1}         "l" --> 12
-	 *            /        \          /     \
-	 *           /          \        /       \
-	 *       "ab"{1}        "au"    "la"      null
-	 *        /    \
-	 *       /      \
-	 *    "aba"      null
-	 * </pre>
-	 */
+    /**
+     * <code>
+     * Input: {1, 1} Output: ("aa", 'k") [2 interpretations: aa(1, 1), k(11)]
+     * <p>
+     * Input: {1, 2, 1} Output: ("aba", "au", "la") [3 interpretations: aba(1,2,1), au(1,21), la(12,1)]
+     * <p>
+     * Input: {9, 1, 8} Output: {"iah", "ir"} [2 interpretations: iah(9,1,8), ir(9,18)]
+     * </code>
+     * <pre>
+     *                    �� {1,2,1}            Codes used in tree
+     *                  /             \               "a" --> 1
+     *                 /               \              "b" --> 2
+     *             "a"{2,1}            "l"{1}         "l" --> 12
+     *            /        \          /     \
+     *           /          \        /       \
+     *       "ab"{1}        "au"    "la"      null
+     *        /    \
+     *       /      \
+     *    "aba"      null
+     * </pre>
+     */
     public static void main(String[] args) {
         int[] input = {1, 1, 2, 1};
         printAllInterpretations(input);
@@ -85,7 +80,7 @@ public class ArrayToAllPermutations {
 
             // new array will be from index 1 to end as we are consuming
             // first index with this node
-            int newArr[] = Arrays.copyOfRange(input, 1, input.length);
+            int[] newArr = Arrays.copyOfRange(input, 1, input.length);
 
             // left child
             root.left = createTree(data, dataToStr, newArr);

@@ -6,9 +6,9 @@ import java.util.Queue;
 
 public class Game {
 
-    private Board board;
-    private Dice dice;
-    private Queue<Player> players;
+    private final Board board;
+    private final Dice dice;
+    private final Queue<Player> players;
     private Player winner = null;
 
     public Game(Board board, Dice dice, Player... players) {

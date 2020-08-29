@@ -2,7 +2,7 @@ package org.psk.practice.snakeladder;
 
 public class Player {
 
-    private String name;
+    private final String name;
     private Square square = null;
 
     public Player(String name) {

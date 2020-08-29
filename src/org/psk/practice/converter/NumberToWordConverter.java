@@ -1,8 +1,8 @@
 package org.psk.practice.converter;
 
 /**
- * The Interface NumberToWordConverter to do conversion from Numeric values to its equivalent words.
- * Each language needs their own converter.
+ * The Interface NumberToWordConverter to do conversion from Numeric values to its equivalent words. Each language needs
+ * their own converter.
  *
  * @author pkabiraj
  */

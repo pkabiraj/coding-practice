@@ -3,6 +3,7 @@ package org.psk.practice.java.readwrite;
 import java.util.Vector;
 
 public class Reader extends Thread {
+
     // The queue is the communication channel between
     // this reader and the writer.
     private final Vector<Integer> queue;

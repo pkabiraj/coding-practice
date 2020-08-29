@@ -29,8 +29,8 @@ public class BritishWordsConverter implements NumberToWordConverter {
     public static void main(String[] args) {
         // The values to be checked. Lowest to highest is specified
         String[] values = new String[]{"0", "4", "21", "4334", "50789", "652374", "7634507",
-                "8000001", "8000101", "8001001", "8000067", "999999999", "99999999999912345",
-                "-245", "4567.123", "123ab233", "12345678987654321234"};
+                                       "8000001", "8000101", "8001001", "8000067", "999999999", "99999999999912345",
+                                       "-245", "4567.123", "123ab233", "12345678987654321234"};
 
         NumberToWordConverter converter = new BritishWordsConverter(new NumberValidator(), new DefaultProcessor());
 

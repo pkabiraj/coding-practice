@@ -2,8 +2,8 @@ package org.psk.practice.snakeladder;
 
 public class BoardObject {
 
-    private int startPosition;
-    private int endPosition;
+    private final int startPosition;
+    private final int endPosition;
 
     public BoardObject(int startPosition, int endPosition) {
         this.startPosition = startPosition;

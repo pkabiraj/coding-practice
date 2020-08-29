@@ -11,9 +11,9 @@ import java.util.Random;
  */
 public class AddGetRemoveRandom<T> {
 
-    private Map<T, Integer> elemMap = new HashMap<>();
-    private List<T> elemIdxList = new ArrayList<>();
-    private Random random = new Random();
+    private final Map<T, Integer> elemMap = new HashMap<>();
+    private final List<T> elemIdxList = new ArrayList<>();
+    private final Random random = new Random();
 
     public void add(T elem) {
         elemIdxList.add(elem);
