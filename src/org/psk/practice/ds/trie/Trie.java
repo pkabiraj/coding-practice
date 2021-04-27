@@ -1,6 +1,7 @@
 package org.psk.practice.ds.trie;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -71,29 +72,26 @@ public class Trie {
         if (!isEmpty(prefix)) {
             prefix = normalizeString(prefix);
             char c = prefix.charAt(0);
-            TrieNode child = current.getChildNode(c);
-            if (child != null) {
-                String word = entirePrefix + child.getContent();
-                if (child.isWord()) {
-                    System.out.println("Found word:" + word);
-                }
-                printWordsMatchingPrefix(prefix.substring(prefix.indexOf(c) + 1), child, word);
-            }
+            childPrefix(current, entirePrefix, c, prefix.substring(prefix.indexOf(c) + 1));
         } else {
             // denotes reaching end of prefix, begin traversing to get matching words.
             Map<Character, TrieNode> map = current.getChildNodes();
             if (map != null) {
                 for (char c : map.keySet()) {
-                    TrieNode child = current.getChildNode(c);
-                    if (child != null) {
-                        String word = entirePrefix + child.getContent();
-                        if (child.isWord()) {
-                            System.out.println("Found word:" + word);
-                        }
-                        printWordsMatchingPrefix("", child, word);
-                    }
+                    childPrefix(current, entirePrefix, c, "");
                 }
             }
+        }
+    }
+
+    private void childPrefix(final TrieNode current, final String entirePrefix, final char c, String prefix) {
+        TrieNode child = current.getChildNode(c);
+        if (child != null) {
+            String word = entirePrefix + child.getContent();
+            if (child.isWord()) {
+                System.out.println("Found word:" + word);
+            }
+            printWordsMatchingPrefix(prefix, child, word);
         }
     }
 

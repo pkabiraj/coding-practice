@@ -35,9 +35,6 @@ public class SequentialThreadScheduler {
             }
 
             index = (++index) % COUNT;
-            if (index == ALPHABETS.length) {
-                index = 0;
-            }
         }
     }
 

@@ -28,9 +28,9 @@ public class DiagonalSwap {
     }
 
     private static void print(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
+        for (final int[] ints : arr) {
             for (int j = 0; j < arr.length; j++) {
-                System.out.print("\t" + arr[i][j]);
+                System.out.print("\t" + ints[j]);
             }
             System.out.println();
         }
