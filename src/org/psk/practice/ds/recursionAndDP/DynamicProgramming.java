@@ -1,7 +1,9 @@
 package org.psk.practice.ds.recursionAndDP;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DynamicProgramming {
 
@@ -36,6 +38,57 @@ public class DynamicProgramming {
         }
         cache[change] = minCoins + 1;
         return cache[change];
+    }
+
+    // Bottom up DP solution. Iteratively compute number of coins for larger and larger amounts of change
+    public int makeChange(int c) {
+        int[] cache = new int[c + 1];
+        for (int i = 1; i <= c; i++) {
+            int minCoins = Integer.MAX_VALUE;
+            // Try removing each coin from the total and see which requires the fewest extra coins
+            for (int coin : DENOMINATIONS) {
+                if (i - coin >= 0) {
+                    int currCoins = cache[i - coin] + 1;
+                    if (currCoins < minCoins) {
+                        minCoins = currCoins;
+                    }
+                }
+            }
+            cache[i] = minCoins;
+        }
+        return cache[c];
+    }
+
+
+    /**
+     * Given an array of integers, nums and a target value T, find the number of ways that you can add and subtract the
+     * values in nums to add up to T.
+     */
+    // Top down dynamic programming solution. Like 0-1 Knapsack, we use a HashMap to save space
+    public int targetSum(int[] nums, int T) {
+        // Map: i -> sum -> value
+        Map<Integer, Map<Integer, Integer>> cache = new HashMap<>();
+        return targetSum(nums, T, 0, 0, cache);
+    }
+
+    // Overloaded recursive function
+    private int targetSum(int[] nums, int T, int i, int sum, Map<Integer, Map<Integer, Integer>> cache) {
+        if (i == nums.length) {
+            return sum == T ? 1 : 0;
+        }
+        // Check the cache and return if we get a hit
+        if (!cache.containsKey(i)) {
+            cache.put(i, new HashMap<>());
+        }
+        Integer cached = cache.get(i).get(sum);
+        if (cached != null) {
+            return cached;
+        }
+        // If we didn't hit in the cache, compute the value and store to cache
+        int toReturn =
+                targetSum(nums, T, i + 1, sum + nums[i], cache) + targetSum(nums, T, i + 1, sum - nums[i], cache);
+        cache.get(i).put(sum, toReturn);
+        return toReturn;
     }
 
 

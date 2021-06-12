@@ -8,7 +8,7 @@ package org.psk.practice.converter;
 public final class ConverterUtil {
 
     // Number of digits currently supported by the program
-    public static final int LIMIT = 9;
+    public static final int LIMIT = 12;
 
     private ConverterUtil() {
         // Utility class

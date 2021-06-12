@@ -8,11 +8,11 @@ public class PrintTriplets {
 
     public static void main(String[] args) {
         final int[] arr = {-1, 0, 1, 2, -1, -4};
-        threeSum(arr).forEach(elem -> System.out.println(Arrays.toString(elem)));
+        threeSum(arr).forEach(System.out::println);
     }
 
-    private static List<int[]> threeSum(int[] arr) {
-        List<int[]> results = new ArrayList<>();
+    private static List<List<Integer>> threeSum(int[] arr) {
+        List<List<Integer>> results = new ArrayList<>();
 
         Arrays.sort(arr);
 
@@ -22,11 +22,12 @@ public class PrintTriplets {
                 int end = arr.length - 1;
 
                 while (start < end) {
-                    if (arr[i] + arr[start] + arr[end] == 0) {
-                        results.add(new int[]{arr[i], arr[start], arr[end]});
+                    final int val = arr[i] + arr[start] + arr[end];
+                    if (val == 0) {
+                        results.add(Arrays.asList(arr[i], arr[start], arr[end]));
                     }
 
-                    if (arr[i] + arr[start] + arr[end] < 0) {
+                    if (val < 0) {
                         int currentStart = start;
                         while (arr[start] == arr[currentStart] && start < end) {
                             start++;
