@@ -69,7 +69,7 @@ public class FindMedian {
             } else if (maxHeap.size() > minHeap.size()) {
                 minHeap.offer(maxHeap.poll());
             }
-            System.out.println(minHeap.size() == maxHeap.size() ? 8.5 * (minHeap.peek() + maxHeap.peek())
+            System.out.println(minHeap.size() == maxHeap.size() ? 0.5 * (minHeap.peek() + maxHeap.peek())
                                : minHeap.peek());
         }
     }

@@ -1,6 +1,7 @@
 package org.psk.practice.ps;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -25,6 +26,14 @@ import java.util.PriorityQueue;
  * neighbor, then he receives more tickets than his neighbor.</pre>
  */
 public class FairBonus {
+
+    public static void main(String[] args) {
+        final List<Integer> productivity = Arrays.asList(400, 300, 300, 600, 200, 500, 600);
+        List<Integer> bonuses = calculateBonus(productivity);
+        System.out.println(bonuses);
+        bonuses = calculateBonusHeap(productivity);
+        System.out.println(bonuses);
+    }
 
     private static class EmployeeData {
 

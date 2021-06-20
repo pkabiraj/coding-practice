@@ -137,10 +137,8 @@ public class Trie {
                     }
                     prefixMatch(input, currentIndex, node, prefix, matches);
                 }
-                prefix.setLength(prefix.length() - 1);
-            } else {
-                prefix.setLength(prefix.length() - 1);
             }
+            prefix.setLength(prefix.length() - 1);
         }
     }
 

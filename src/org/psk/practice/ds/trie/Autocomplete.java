@@ -3,6 +3,7 @@ package org.psk.practice.ds.trie;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Autocomplete {
 
@@ -10,19 +11,19 @@ public class Autocomplete {
     private static class Node {
 
         String prefix;
-        HashMap<Character, Node> children;
+        Map<Character, Node> children;
 
         // Does this node represent the last character in a word?
         boolean isWord;
 
         private Node(String prefix) {
             this.prefix = prefix;
-            this.children = new HashMap<Character, Node>();
+            this.children = new HashMap<>();
         }
     }
 
     // The trie
-    private Node trie;
+    private final Node trie;
 
     // Construct the trie from the dictionary
     public Autocomplete(String[] dict) {
@@ -42,15 +43,13 @@ public class Autocomplete {
                 curr.children.put(s.charAt(i), new Node(s.substring(0, i + 1)));
             }
             curr = curr.children.get(s.charAt(i));
-            if (i == s.length() - 1) {
-                curr.isWord = true;
-            }
         }
+        curr.isWord = true;
     }
 
     // Find all words in trie that start with prefix
     public List<String> getWordsForPrefix(String pre) {
-        List<String> results = new LinkedList<String>();
+        List<String> results = new LinkedList<>();
 
         // Iterate to the end of the prefix
         Node curr = trie;

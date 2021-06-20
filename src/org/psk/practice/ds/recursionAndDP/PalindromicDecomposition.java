@@ -3,8 +3,6 @@ package org.psk.practice.ds.recursionAndDP;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.ctci.sixthedition.solutions.ch02LinkedLists.Q2_02_Return_Kth_To_Last.QuestionC.Index;
-
 /**
  * A string is said to be palindromic if it reads the same backwards and forwards. A decomposition of a string is a set
  * of strings whose concatenation is the string. For example, "611116" is palindromic, and "611", "11", "6" is one
@@ -21,8 +19,8 @@ public class PalindromicDecomposition {
     }
 
     private static void palindromicPartitioning(final String input, final int offset,
-                                                    final ArrayList<String> partialPartition,
-                                                    final List<List<String>> result) {
+                                                final List<String> partialPartition,
+                                                final List<List<String>> result) {
         if (offset == input.length()) {
             result.add(new ArrayList<>(partialPartition));
             return;

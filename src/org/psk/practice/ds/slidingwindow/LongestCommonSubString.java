@@ -1,4 +1,4 @@
-package org.psk.practice.ds.graph;
+package org.psk.practice.ds.slidingwindow;
 
 import java.util.ArrayList;
 import java.util.List;

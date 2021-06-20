@@ -19,7 +19,7 @@ public class LengthOfLongestSubstringTwoDistinct {
         int right = 0;
         // hashmap character -> its rightmost position
         // in the sliding window
-        final Map<Character, Integer> charIndexMap = new HashMap<Character, Integer>();
+        final Map<Character, Integer> charIndexMap = new HashMap<>();
         int maxLength = DISTINCT_ELEM;
 
         while (right < len) {

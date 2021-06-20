@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * Let A be a 2D array whose entries are either WorB. Write a program that takes A, and replaces all Ws that cannot
+ * Let A be a 2D array whose entries are either W or B. Write a program that takes A, and replaces all Ws that cannot
  * reach the boundary with a B.
  */
 public class FillSurroundingRegions {
@@ -18,10 +18,9 @@ public class FillSurroundingRegions {
         }
         List<List<Boolean>> visited = new ArrayList<>(board.size());
         for (List<Character> characters : board) {
-            visited.add(new ArrayList(Collections.nCopies(characters.size(), false)));
+            visited.add(new ArrayList<>(Collections.nCopies(characters.size(), false)));
         }
-        // Identifies the regions that are reachable via white path starting from
-        // the first or last columns.
+        // Identifies the regions that are reachable via white path starting from the first or last columns.
         for (int i = 0; i < board.size(); ++i) {
             if (board.get(i).get(0) == 'W' && !visited.get(i).get(0)) {
                 markBoundaryRegion(i, 0, board, visited);
@@ -69,7 +68,7 @@ public class FillSurroundingRegions {
         // Uses BFS to traverse this region.
         while (!q.isEmpty()) {
             Coordinate curr = q.poll();
-            final int DIRS[][] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+            final int[][] DIRS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
             for (int[] dir : DIRS) {
                 Coordinate next = new Coordinate(curr.x + dir[0], curr.y + dir[1]);
                 if (next.x >= 0 && next.x < board.size() && next.y >= 0 && next.y < board.get(next.x).size()

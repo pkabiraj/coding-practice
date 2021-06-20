@@ -21,7 +21,7 @@ public class PhoneMnemonics {
 
     public static void main(String[] args) {
         System.out.println(phoneMnemonic("227"));
-        System.out.println(phoneMnemonic("2126A"));
+        System.out.println(phoneMnemonic("2126"));
         System.out.println(phoneMnemonic("2276696"));
     }
 
