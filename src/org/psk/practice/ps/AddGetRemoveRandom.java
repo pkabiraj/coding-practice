@@ -23,11 +23,13 @@ public class AddGetRemoveRandom<T> {
 
     public void remove(T elem) {
         int index = elemMap.get(elem);
-        elemMap.remove(elem);
         T t = elemIdxList.get(elemIdxList.size() - 1);
-        elemIdxList.remove(elemIdxList.size() - 1);
+
         elemIdxList.set(index, t);
         elemMap.put(t, index);
+
+        elemMap.remove(elem);
+        elemIdxList.remove(elemIdxList.size() - 1);
     }
 
     public T getRandom() {

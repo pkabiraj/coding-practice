@@ -7,8 +7,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class ThreadPool {
 
-    private BlockingQueue<Runnable> taskQueue;
-    private Set<PoolableThread> workers;
+    private final BlockingQueue<Runnable> taskQueue;
+    private final Set<PoolableThread> workers;
     private volatile boolean stopped = false;
 
     public ThreadPool(final int size) {
@@ -22,7 +22,7 @@ public class ThreadPool {
 
     public void execute(final Runnable task) {
         if (stopped) {
-            throw new IllegalStateException("Thread pool is stopped, cannot execute anymore");
+            throw new IllegalStateException("Thread pool has stopped, cannot execute anymore");
         }
 
         try {
