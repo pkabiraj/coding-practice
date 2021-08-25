@@ -45,7 +45,25 @@ public class Power {
 
     }
 
+    public static double power(double x, int y){
+        double result = 1.0;
+        long power = y;
+        if (y < 0) {
+            power = -power;
+            x = 1.0 / x ;
+        }
+        while (power != 0) {
+            if ((power & 1) != 0) {
+                result *= x;
+            }
+            x *= x ;
+            power >>>= 1 ;
+        }
+        return result ;
+    }
+
     public static void main(String[] args) {
+        System.out.println(Power.power(-2, 9));
         System.out.println(Power.pow(-2, 9));
 
         // int a[] = { 7, 5, 7, 6, 7, 4, 7, 6, 7, 3, 7, 5, 7 };

@@ -5,37 +5,36 @@ public class RecursiveProcessor implements Processor {
     private static final String[] UNIT_TOKENS =
             new String[]{"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
                          "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-    private final String[] TENS_TOKENS = new String[]{"Twenty", "Thirty", "Fourty", "Fifty",
-                                                 "Sixty", "Seventy", "Eighty", "Ninety"};
-
+    private final String[] TENS_TOKENS = new String[]{"Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy",
+                                                      "Eighty", "Ninety"};
 
     @Override
     public String getName(final String value) {
         return numberToWords(Integer.parseInt(value));
     }
 
-    public String one(int num) {
+    private String one(int num) {
         if (num < 10) {
             return UNIT_TOKENS[num];
         }
         return "";
     }
 
-    public String twoLessThan20(int num) {
+    private String twoLessThan20(int num) {
         if (num < 20 && num > 9) {
             return UNIT_TOKENS[num];
         }
         return "";
     }
 
-    public String ten(int num) {
+    private String ten(int num) {
         if (num > 1 && num < 10) {
             return TENS_TOKENS[num - 2];
         }
         return "";
     }
 
-    public String two(int num) {
+    private String two(int num) {
         if (num == 0) {
             return "";
         } else if (num < 10) {
@@ -53,7 +52,7 @@ public class RecursiveProcessor implements Processor {
         }
     }
 
-    public String three(int num) {
+    private String three(int num) {
         int hundred = num / 100;
         int rest = num - hundred * 100;
         String res = "";

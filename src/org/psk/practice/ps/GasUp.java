@@ -26,7 +26,7 @@ public class GasUp {
 
     private static final int MPG = 20;
 
-    // gallons[ij is the amount of gas in city i, and distances[i] is the distance city i to the next city.
+    // gallons[i] is the amount of gas in city i, and distances[i] is the distance city i to the next city.
     public static CityAndRemainingGas findAmpleCity(List<Integer> gallons, List<Integer> distances) {
         int remainingGallons = 0;
         CityAndRemainingGas min = new CityAndRemainingGas(0, 0);
